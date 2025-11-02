@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POPCITY E-BOOK</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(270deg, #6e00ff, #00c3ff, #ff007a);
+      background-size: 600% 600%;
+      animation: gradientShift 10s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+      padding: 20px;
+      position: relative;
+    }
+
+    .login-box {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      padding: 40px;
+      width: 300px;
+      text-align: center;
+      color: white;
+      transform: translateX(-40px);
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+      font-size: 1.8em;
+      background: linear-gradient(90deg, #ffffff, #d0d0ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      background: rgba(255,255,255,0.2);
+      color: white;
+      font-size: 1em;
+    }
+
+    .login-box input::placeholder {
+      color: #eee;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(90deg, #00c3ff, #6e00ff);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login-box button:hover {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 2.5em;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: white;
+      text-shadow: 0 0 15px rgba(255,255,255,0.6);
+    }
+
+    video.character {
+      width: 350px;
+      max-width: 35vw;
+      height: auto;
+      pointer-events: none;
+      border-radius: 20px;
+      filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
+      position: relative;
+      z-index: 1;
+      transform: translateX(40px) translateY(20px);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .login-box {
+        transform: none;
+      }
+      video.character {
+        max-width: 60vw;
+        transform: none;
+        margin-bottom: -20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Transparent looping video placeholder -->
+    <video class="character" autoplay muted loop playsinline>
+      <source src="character-animation.webm" type="video/webm">
+      <source src="character-animation.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="login-box">
+      <div class="logo">POPCITY E-BOOK</div>
+      <h2>Welcome Back</h2>
+      <input type="text" placeholder="Username or Email" />
+      <input type="password" placeholder="Password" />
+      <button>Login</button>
+    </div>
+  </div>
+</body>
+</html>
